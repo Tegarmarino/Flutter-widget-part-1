@@ -8,18 +8,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool isLoved = false;
+  bool loveStatus = false;
   // Insialisasi variable untuk menentukan status button
 
   void toggleLove() {
     setState(() {
       // setState digunakan untuk memberitahu flutter jika ada perubahan
       // yang terjadi, sehingga flutter bisa memperbarui tampilan sesuai perubahannya
-      isLoved = !isLoved;
+      loveStatus = !loveStatus;
     });
   }
   // Function toggleLove() digunakan untuk mengubah value varible
-  // isLoved menjadi kebalikannya yaitu true atau false
+  // loveStatus menjadi kebalikannya yaitu true atau false
 
   @override
   Widget build(BuildContext context) {
@@ -224,7 +224,7 @@ class _HomePageState extends State<HomePage> {
                     child: Center(
                       child: Icon(
                         Icons.favorite,
-                        color: isLoved ? Colors.red : Colors.grey,
+                        color: loveStatus ? Colors.red : Colors.grey,
                         size: 25.0,
                       ),
                     ),
