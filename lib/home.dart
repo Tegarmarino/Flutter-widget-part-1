@@ -202,25 +202,23 @@ class _HomePageState extends State<HomePage> {
               ],
             )),
             // Stack 3 berisi button love yang interaktif
-            Flexible(
-              child: Positioned(
-                top: 20,
-                right: 20,
-                width: 60.0,
-                height: 60.0,
-                child: GestureDetector(
-                  onTap: toggleLove,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                    ),
-                    child: Center(
-                      child: Icon(
-                        Icons.favorite,
-                        color: isLoved ? Colors.red : Colors.grey,
-                        size: 25.0,
-                      ),
+            Positioned(
+              top: 20,
+              right: 20,
+              width: 60.0,
+              height: 60.0,
+              child: GestureDetector(
+                onTap: toggleLove,
+                child: Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                  ),
+                  child: Center(
+                    child: Icon(
+                      Icons.favorite,
+                      color: isLoved ? Colors.red : Colors.grey,
+                      size: 25.0,
                     ),
                   ),
                 ),
