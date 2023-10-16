@@ -9,12 +9,17 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool isLoved = false;
+  // Insialisasi variable untuk menentukan status button
 
   void toggleLove() {
     setState(() {
+      // setState digunakan untuk memberitahu flutter jika ada perubahan
+      // yang terjadi, sehingga flutter bisa memperbarui tampilan sesuai perubahannya
       isLoved = !isLoved;
     });
   }
+  // Function toggleLove() digunakan untuk mengubah value varible
+  // isLoved menjadi kebalikannya yaitu true atau false
 
   @override
   Widget build(BuildContext context) {
@@ -202,23 +207,26 @@ class _HomePageState extends State<HomePage> {
               ],
             )),
             // Stack 3 berisi button love yang interaktif
-            Positioned(
-              top: 20,
-              right: 20,
-              width: 60.0,
-              height: 60.0,
-              child: GestureDetector(
-                onTap: toggleLove,
-                child: Container(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                  ),
-                  child: Center(
-                    child: Icon(
-                      Icons.favorite,
-                      color: isLoved ? Colors.red : Colors.grey,
-                      size: 25.0,
+            Flexible(
+              child: Align(
+                alignment: Alignment.topRight,
+                child: GestureDetector(
+                  onTap: toggleLove,
+                  // Mengoperasikan function toggleLove dengan gesture 1 tap atau onTap
+                  child: Container(
+                    margin: EdgeInsets.fromLTRB(0, 20, 20, 0),
+                    width: 60.0,
+                    height: 60.0,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                    ),
+                    child: Center(
+                      child: Icon(
+                        Icons.favorite,
+                        color: isLoved ? Colors.red : Colors.grey,
+                        size: 25.0,
+                      ),
                     ),
                   ),
                 ),
